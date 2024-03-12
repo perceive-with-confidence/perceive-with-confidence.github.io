@@ -1,0 +1,188 @@
+﻿Diagnose log at 2024-03-12T19:01:01Z
+
+AppPath: /usr/local/bin/git-credential-manager
+InstallDir: /usr/local/share/gcm-core/
+Version: 2.0.935+8b4735fc7b
+
+------------
+Diagnostic: Environment
+Skipped: False
+Success: True
+Exception: None
+Log:
+OSType: Linux
+OSVersion: Linux mae-majumdar-lab5 6.2.0-37-generic #38~22.04.1-Ubuntu SMP PREEMPT_DYNAMIC Thu Nov  2 18:01:13 UTC 2 x86_64 x86_64 x86_64 GNU/Linux
+Reading environment variables... OK
+ Variables:
+XMODIFIERS=@im=ibus
+LD_LIBRARY_PATH=/usr/local/cuda-11.7/lib64:/home/anushri/Downloads/cuda/lib64:
+DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1001/bus
+QT_ACCESSIBILITY=1
+GPG_AGENT_INFO=/run/user/1001/gnupg/S.gpg-agent:0:1
+GDMSESSION=ubuntu
+GNOME_SHELL_SESSION_MODE=ubuntu
+DESKTOP_SESSION=ubuntu
+_CE_M=
+GNOME_TERMINAL_SERVICE=:1.2131
+USERNAME=anushri
+_CE_CONDA=
+PWD=/home/anushri/Documents/Projects/perceive-with-confidence.github.io
+XDG_SESSION_DESKTOP=ubuntu
+SESSION_MANAGER=local/mae-majumdar-lab5:@/tmp/.ICE-unix/3435009,unix/mae-majumdar-lab5:/tmp/.ICE-unix/3435009
+GTK_IM_MODULE=ibus
+XDG_CONFIG_DIRS=/etc/xdg/xdg-ubuntu:/etc/xdg
+XDG_SESSION_TYPE=x11
+VTE_VERSION=6800
+LS_COLORS=rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:
+_=/usr/local/bin/git-credential-manager
+PATH=/usr/local/cuda-11.7/bin:/home/anushri/miniconda3/bin:/home/anushri/miniconda3/condabin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin
+GNOME_TERMINAL_SCREEN=/org/gnome/Terminal/screen/22caa249_8f93_46a9_b846_d74def13a502
+XDG_CURRENT_DESKTOP=ubuntu:GNOME
+SSH_AGENT_LAUNCHER=gnome-keyring
+OLDPWD=/home/anushri/Documents/Projects
+WINDOWPATH=2
+DISPLAY=:1
+CONDA_DEFAULT_ENV=base
+TERM=xterm-256color
+CONDA_EXE=/home/anushri/miniconda3/bin/conda
+GIT_TRACE2_PARENT_SID=bc06d0f8-da65-4d79-85b5-38897071bdab
+COLORTERM=truecolor
+QT_IM_MODULE=ibus
+XDG_DATA_DIRS=/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop
+CONDA_PYTHON_EXE=/home/anushri/miniconda3/bin/python
+CONDA_PREFIX=/home/anushri/miniconda3
+HOME=/home/anushri
+XAUTHORITY=/run/user/1001/gdm/Xauthority
+CONDA_PROMPT_MODIFIER=(base) 
+GNOME_DESKTOP_SESSION_ID=this-is-deprecated
+LESSCLOSE=/usr/bin/lesspipe %s %s
+XDG_MENU_PREFIX=gnome-
+SHLVL=1
+USER=anushri
+XDG_SESSION_CLASS=user
+GTK_MODULES=gail:atk-bridge
+LOGNAME=anushri
+XDG_RUNTIME_DIR=/run/user/1001
+SYSTEMD_EXEC_PID=3740341
+LESSOPEN=| /usr/bin/lesspipe %s
+CONDA_SHLVL=1
+LANG=en_US.UTF-8
+CUDA_HOME=/usr/local/cuda
+SSH_AUTH_SOCK=/run/user/1001/keyring/ssh
+SHELL=/bin/bash
+
+
+------------
+Diagnostic: File system
+Skipped: False
+Success: True
+Exception: None
+Log:
+Temporary directory is '/tmp/'...
+Checking basic file I/O...
+Writing to temporary file '/tmp/e846477297939be961e6d400'... OK
+Reading from temporary file '/tmp/e846477297939be961e6d400'... OK
+Deleting temporary file '/tmp/e846477297939be961e6d400'... OK
+Testing IFileSystem instance...
+UserHomePath: /home/anushri
+UserDataDirectoryPath: /home/anushri/.gcm
+GetCurrentDirectory(): /home/anushri/Documents/Projects/perceive-with-confidence.github.io
+
+------------
+Diagnostic: Networking
+Skipped: False
+Success: True
+Exception: None
+Log:
+Checking networking and HTTP stack...
+Creating HTTP client... OK
+IsNetworkAvailable: True
+Sending HEAD request to http://example.com... OK
+Sending HEAD request to https://example.com... OK
+Acquiring free TCP port... OK
+Testing local HTTP loopback connections...
+Creating new HTTP listener for http://localhost:44657/... OK
+Waiting for loopback connection... OK
+Writing response... OK
+Waiting for response data... OK
+Loopback connection data OK
+
+------------
+Diagnostic: Git
+Skipped: False
+Success: True
+Exception: None
+Log:
+Getting Git version... OK
+Git version is '2.34.1'
+Locating current repository... OK
+Git repository at '/home/anushri/Documents/Projects/perceive-with-confidence.github.io/.git'
+Listing all Git configuration... OK
+Git configuration:
+file:/home/anushri/.gitconfig	credential.credentialstore=wincredman
+file:/home/anushri/.gitconfig	credential.helper=
+file:/home/anushri/.gitconfig	credential.helper=/usr/local/bin/git-credential-manager
+file:/home/anushri/.gitconfig	credential.https://dev.azure.com.usehttppath=true
+file:/home/anushri/.gitconfig	user.email=anushridixit111@gmail.com
+file:/home/anushri/.gitconfig	user.name=Anushri Dixit
+file:/home/anushri/.gitconfig	credential.https://github.com.helper=
+file:/home/anushri/.gitconfig	credential.https://github.com.helper=!/usr/bin/gh auth git-credential
+file:/home/anushri/.gitconfig	credential.https://gist.github.com.helper=
+file:/home/anushri/.gitconfig	credential.https://gist.github.com.helper=!/usr/bin/gh auth git-credential
+file:.git/config	core.repositoryformatversion=0
+file:.git/config	core.filemode=true
+file:.git/config	core.bare=false
+file:.git/config	core.logallrefupdates=true
+file:.git/config	remote.origin.url=https://github.com/perceive-with-confidence/perceive-with-confidence.github.io.git
+file:.git/config	remote.origin.fetch=+refs/heads/*:refs/remotes/origin/*
+file:.git/config	branch.main.remote=origin
+file:.git/config	branch.main.merge=refs/heads/main
+file:.git/config	user.name=perceive-with-confidence
+file:.git/config	user.email=anushri.dixit@princeton.edu
+file:.git/config	credential.username=perceive-with-confidence
+
+
+------------
+Diagnostic: Credential storage
+Skipped: False
+Success: False
+Exception:
+System.Exception: Can only use the 'wincredman' credential store on Windows.
+See https://aka.ms/gcm/credstores for more information.
+   at GitCredentialManager.CredentialStore.ValidateWindowsCredentialManager()
+   at GitCredentialManager.CredentialStore.EnsureBackingStore()
+   at GitCredentialManager.CredentialStore.Remove(String service, String account)
+   at GitCredentialManager.Diagnostics.CredentialStoreDiagnostic.RunInternalAsync(StringBuilder log, IList`1 additionalFiles)
+   at GitCredentialManager.Diagnostics.Diagnostic.RunAsync()
+Log:
+ICredentialStore instance is of type: CredentialStore
+Writing test credential...Deleting test credential...
+------------
+Diagnostic: Microsoft authentication (AAD/MSA)
+Skipped: False
+Success: True
+Exception: None
+Log:
+Broker not supported.
+Flow type is: Auto
+Gathering MSAL token cache data... OK
+CacheDirectory: /home/anushri/.local/.IdentityService
+CacheFileName: msal.cache
+CacheFilePath: /home/anushri/.local/.IdentityService/msal.cache
+KeyringCollection: 
+KeyringSchemaName: 
+KeyringSecretLabel: 
+KeyringAttribute1: (,)
+KeyringAttribute2: (,)
+Creating cache helper... OK
+Verifying MSAL token cache persistence... OK
+
+------------
+Diagnostic: GitHub API
+Skipped: False
+Success: True
+Exception: None
+Log:
+Using 'https://github.com/' as API target.
+Querying '/meta' endpoint... OK
+
