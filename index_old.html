@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QXEE17ZF5T"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-QXEE17ZF5T');
+    </script>
+
+<title>Perceive with Confidence: Statistical Safety Assurances for Navigation with Learning-Based Perception</title>
+
+<meta name="description" content="Perceive with Confidence: Statistical Safety Assurances for Navigation with Learning-Based Perception">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.8.0/codemirror.min.css">
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/default.min.css">
+<link rel="stylesheet" href="css/app.css">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.8.0/codemirror.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.3/clipboard.min.js"></script>
+
+<script src="js/app.js"></script>
+
+<style>
+    .nav-pills {
+      position: relative;
+      display: inline;
+    }
+    .imtip {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+</style>
+</head>
+<body>
+    <div class="container" id="main">
+        <div class="row mt-4">
+            <h2 class="col-md-12 text-center">
+                <b><font size="+6">Perceive with Confidence:</font></b> </br> Statistical Safety Assurances for Navigation with Learning-Based Perception </br> 
+            </h2>
+        </div>
+<!-- <h1><center><span style="font-weight:bold;">Perceive with Confidence:</span><br>Statistical Safety Assurances for Navigation with Learning-Based Perception</center></h1> -->
+<div class="row">
+    <div class="col-md-12 text-center">
+        <ul class="list-inline">
+        <br>
+        <li><a href="//www.anushridixit.com/">Anushri Dixit</a></li>
+        <li><a href="//may0mei.github.io/">Zhiting Mei</a></li>
+        <li><a href="//www.megbooker.com/">Meghan Booker</a></li>
+        <li><a href="//www.linkedin.com/in/mariko-storey">Mariko Storey-Matsutani</a></li>
+        <li><a href="//allenzren.github.io">Allen Z. Ren</a></li>
+        <li><a href="//irom-lab.princeton.edu/majumdar/">Anirudha Majumdar</a></li>
+        <br>
+    </div>
+</div>
+
+<div class="row justify-content-md-center">
+    <div class="col-md-12 text-center">
+        <a href="https://irom-lab.princeton.edu/">
+            <image src="irom_lab.png" height="35px"> 
+            <!-- IRoM lab logo -->
+        </a>
+    </div>
+    <div class="col-md-12 text-center">
+        <a href="https://www.princeton.edu/">
+            <image src="PU1line.svg" height="55px"> 
+            <!-- Princeton University                        -->
+        </a>
+    </div>
+</div>
+
+<br>
+
+<div class="row justify-content-md-center">
+    <div class="col-md-2 text-center">
+        <a href="https://arxiv.org/abs/2403.08185">
+        <image src="PDF_file_icon.png" height="45px">
+        <h4><strong>Paper</strong></h4>
+        <!-- <h6>Paper</h6> -->
+        </a>
+    </div>
+    <div class="col-md-2 text-center">
+        <a href="https://github.com/irom-lab/perception-guarantees">
+        <image src="GitHub_Invertocat_Logo.png" height="45px">
+        <h4><strong>Code</strong></h4>
+        <!-- <h6>Code (coming soon)</h6> -->
+        </a>
+    </div>
+</div>
+
+<div class="row mt-4">
+    <div class="col-md-12 text-center">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/sztc832hw0c?si=oxn8C7AgpTueKl2M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>    </div>
+</div>
+
+<div class="row justify-content-md-center">
+    <div class="col-md-10 col-lg-8">
+        <h3 class="mt-4 mb-2">
+            Abstract
+        </h3>
+        <p class="text-justify">
+            Rapid advances in perception have enabled large pre-trained models to be used out of the box for processing high-dimensional, noisy, and partial observations of the world into rich geometric representations (e.g., occupancy predictions). However, safe integration of these models onto robots remains challenging due to a lack of reliable performance in unfamiliar environments. In this work, we present a framework for rigorously quantifying the uncertainty of pre-trained perception models for occupancy prediction in order to provide end-to-end statistical safety assurances for navigation. We build on techniques from conformal prediction for producing a calibrated perception system that lightly processes the outputs of a pre-trained model while ensuring generalization to novel environments and robustness to distribution shifts in states when perceptual outputs are used in conjunction with a planner. The calibrated system can be used in combination with any safe planner to provide an end-to-end statistical assurance on safety in a new environment with a user-specified threshold 1-epsilon. We evaluate the resulting approach — which we refer to as Perceive with Confidence (PwC) - with experiments in simulation and on hardware where a quadruped robot navigates through indoor environments containing objects unseen during training or calibration. These experiments validate the safety assurances provided by PwC and demonstrate significant improvements in empirical safety rates compared to baselines.
+        </p>
+        <p style="text-align:center;">
+            <image src="processDiagram.png" width="100%">
+        </p>
+    </div>
+</div>
+<div class="row justify-content-md-center">
+    <div class="col-md-10 col-lg-8">
+        <h3>
+            Citation 
+        </h3>
+        <a href="https://arxiv.org/abs/2403.08185">[arxiv version]</a>
+        <div class="form-group col-md-12">
+            <textarea id="bibtex" class="form-control" rows="8" readonly>
+@inproceedings{pwc2024,
+title={Perceive with Confidence: Statistical Safety Assurances for Navigation with Learning-Based Perception},
+author={Dixit, Anushri and Mei, Zhiting and Booker, Meghan and Storey-Matsutani, Mariko and Ren, Allen Z. and  Majumdar, Anirudha},
+booktitle={arXiv preprint arXiv:2403.08185},
+year={2023}
+}</textarea>
+        </div>
+    </div>
+</div>
+
+<div class="row justify-content-md-center">
+    <div class="col-md-10 col-lg-8">
+         <a href="https://robot-help.github.io/">Website adapted from KnowNo.</a>
+    </div>
+</div>
+        
+</body>
+</html>

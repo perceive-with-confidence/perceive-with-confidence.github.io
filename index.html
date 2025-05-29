@@ -1,145 +1,243 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Perceive with Confidence: Statistical Safety Assurances for Navigation with Learning-Based Perception</title>
 
-<head lang="en">
-    <meta charset="UTF-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <!--  =====  FONTS & ICONS  =====  -->
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+  <link rel="icon" href="./static/icon.png" /> <!-- TODO: page icon -->
 
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QXEE17ZF5T"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-QXEE17ZF5T');
-    </script>
+  <!--  =====  CSS  =====  -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" />
 
-<title>Perceive with Confidence: Statistical Safety Assurances for Navigation with Learning-Based Perception</title>
+  <style>
+    /* --- GLOBAL --- */
+    body{background:#fff;font-family:"Noto Sans",sans-serif;font-size:18px; line-height:1.5;color:#333;}
+    section{padding:2.5rem 0;}
 
-<meta name="description" content="Perceive with Confidence: Statistical Safety Assurances for Navigation with Learning-Based Perception">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+    /* --- SECTION COLORS --- */
+    .section-gray{background:#f7f7f7;}
 
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.8.0/codemirror.min.css">
-<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/default.min.css">
-<link rel="stylesheet" href="css/app.css">
+    /* --- TYPOGRAPHY & LINKS --- */
+    .task-title{margin-bottom:1rem;font-weight:600;}
+    .publication-authors{margin-bottom:1rem;} /* space below authors */
+    .publication-authors a{color:#3273dc;text-decoration:none;white-space:nowrap;}
+    .publication-authors a:hover{text-decoration:underline;}
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.8.0/codemirror.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.3/clipboard.min.js"></script>
+    /* --- HERO & SPACING TWEAKS --- */
+    .hero{padding-bottom:0.0rem;} /* tighter gap above overview */
+    #overview.section{padding-top:0.0rem;} /* tighter gap below hero */
+    .publication-links{margin-top:1.5rem;margin-bottom:1.5rem;} /* gap between authors/icons & icons/logo */
+    figure.lab-logo{margin-top:1.5rem;} /* gap between icons and Princeton logo */
+    /* #sim-robot.section{padding-bottom:0.1rem;} gap above simulation section */
+    #bibtex.section-{padding-top:0rem;} /* gap above BibTeX section */
 
-<script src="js/app.js"></script>
+    /* --- SLICK ARROWS --- */
+    .slick-prev:before,.slick-next:before{color:#3273dc;font-size:32px;}
 
-<style>
-    .nav-pills {
-      position: relative;
-      display: inline;
+    /* --- THUMBNAILS --- */
+    .video-thumb{cursor:pointer;border-radius:8px;overflow:hidden;box-shadow:0 2px 4px rgba(0,0,0,0.1);margin:0 8px;}
+    .video-thumb video{width:100%;height:auto;display:block;}
+
+    /* --- STAND‑ALONE VIDEOS --- */
+    .overview-video,.sim-video{width:100%;height:auto;border-radius:0;box-shadow:none;pointer-events:none;}
+
+    /* --- LAYOUT HELPERS --- */
+    .task-block{margin-bottom:3rem;}
+    .task-carousel{margin-top:1rem;}
+
+    /* --- CONTENT WIDTH CONSISTENCY --- */
+    .content-container{max-width:960px;margin:0 auto;}
+
+    /* --- PDF EMBED --- */
+    .pdf-container{margin-top:1.5rem;}
+    .pdf-container object{width:100%;height:600px;border:none;}
+
+    /* --- REAL EXP IMG --- */
+    .real-exp-img{width:100%;height:auto;max-width:100%;}
+    /* --- LINK COLOR (lighter blue, closer to default hyperlinks) --- */
+
+    .publication-authors a:hover{
+      text-decoration:underline;
     }
-    .imtip {
-      position: absolute;
-      top: 0;
-      left: 0;
-    }
-</style>
+
+    /* --- HERO ↔ OVERVIEW GAP (shrink) --- */
+    .hero{padding-bottom:0rem;}         /* was 0.5rem */
+    #overview.section{padding-top:0rem;}/* was 0.75rem */
+
+    /* --- REAL-ROBOT ↔ SIMULATION GAP (shrink) --- */
+    #real-robot.section{padding-top:2.5rem;} /* default Bulma ≈2.5rem */
+    #real-robot.section{padding-bottom:2.5rem;} /* default Bulma ≈2.5rem */
+    #sim-robot.section {padding-top:2.5rem;}    /* default Bulma ≈2.5rem */
+
+    /* --- SIMULATION ↔ BIBTEX GAP (shrink) --- */
+    #BibTeX.section{padding-top:0.1rem;}        /* tighten above BibTeX */
+  </style>
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  </script>
+  <script>
+    window.addEventListener('load', () => {
+      if (window.MathJax) {
+        MathJax.typesetPromise();
+      }
+    });
+  </script>
+  
+
 </head>
 <body>
-    <div class="container" id="main">
-        <div class="row mt-4">
-            <h2 class="col-md-12 text-center">
-                <b><font size="+6">Perceive with Confidence:</font></b> </br> Statistical Safety Assurances for Navigation with Learning-Based Perception </br> 
-            </h2>
+
+  <!-- ===== HERO with title & authors ===== -->
+  <section class="hero section">
+    <div class="hero-body">
+      <div class="container is-max-widescreen has-text-centered">
+        <h1 class="title is-2 publication-title">Perceive with Confidence: Statistical Safety Assurances for Navigation with Learning-Based Perception</h1>
+        <!-- ===== AUTHORS (three rows, no underscores) ===== -->
+        <div class="is-size-5 publication-authors">
+          <div>
+            <span class="author-block"><a href="https://may0mei.github.io/">Zhiting&nbsp;Mei</a></span>,
+            <span class="author-block"><a href="https://www.anushridixit.com/">Anushri&nbsp;Dixit</a></span>,
+            <span class="author-block"><a href="https://www.megbooker.com/">Meghan&nbsp;Booker</a></span>,
+            <span class="author-block"><a href="https://www.linkedin.com/in/zhou-emily/">Emily&nbsp;Zhou</a></span>,
+            <span class="author-block"><a href="https://www.linkedin.com/in/mariko-storey">Mariko&nbsp;Storey-Matsutani</a></span>,
+          </div>
+          <div>
+            <span class="author-block"><a href="https://allenzren.github.io">Allen&nbsp;Z.&nbsp;Ren</a></span>,
+            <span class="author-block"><a href="https://irom-lab.princeton.edu/people/">Ola&nbsp;Shorinwa</a></span>,
+            <span class="author-block"><a href="https://irom-lab.princeton.edu/majumdar/">Anirudha&nbsp;Majumdar</a></span>
+        <br>
+          </div>
         </div>
-<!-- <h1><center><span style="font-weight:bold;">Perceive with Confidence:</span><br>Statistical Safety Assurances for Navigation with Learning-Based Perception</center></h1> -->
-<div class="row">
-    <div class="col-md-12 text-center">
-        <ul class="list-inline">
-        <br>
-        <li><a href="//www.anushridixit.com/">Anushri Dixit</a></li>
-        <li><a href="//may0mei.github.io/">Zhiting Mei</a></li>
-        <li><a href="//www.megbooker.com/">Meghan Booker</a></li>
-        <li><a href="//www.linkedin.com/in/mariko-storey">Mariko Storey-Matsutani</a></li>
-        <li><a href="//allenzren.github.io">Allen Z. Ren</a></li>
-        <li><a href="//irom-lab.princeton.edu/majumdar/">Anirudha Majumdar</a></li>
-        <br>
-    </div>
-</div>
 
-<div class="row justify-content-md-center">
-    <div class="col-md-12 text-center">
-        <a href="https://irom-lab.princeton.edu/">
-            <image src="irom_lab.png" height="35px"> 
-            <!-- IRoM lab logo -->
-        </a>
-    </div>
-    <div class="col-md-12 text-center">
-        <a href="https://www.princeton.edu/">
-            <image src="PU1line.svg" height="55px"> 
-            <!-- Princeton University                        -->
-        </a>
-    </div>
-</div>
+        <!-- ===== RESOURCE ICONS ===== -->
+        <div class="publication-links">
+          <a href="static/paper.pdf" class="external-link button is-normal is-rounded is-dark" target="_blank" rel="noopener"> <!-- TODO: paper pdf-->
+            <span class="icon"><i class="fas fa-file-pdf"></i></span><span>Paper</span>
+          </a>
+          <a href="https://arxiv.org/abs/2403.08185" class="external-link button is-normal is-rounded is-dark" target="_blank" rel="noopener">
+            <span class="icon"><i class="ai ai-arxiv"></i></span><span>arXiv</span>
+          </a>
+          <a href="#https://github.com/irom-princeton/perception-guarantees" class="external-link button is-normal is-rounded is-dark" target="_blank" rel="noopener">
+            <span class="icon"><i class="fab fa-github"></i></span><span>Code</span>
+          </a>
+          <a href="#https://youtu.be/sztc832hw0c" class="external-link button is-normal is-rounded is-dark" target="_blank" rel="noopener">
+            <span class="icon"><i class="fab fa-youtube"></i></span><span>Video</span>
+          </a>
+        </div>
 
-<br>
-
-<div class="row justify-content-md-center">
-    <div class="col-md-2 text-center">
-        <a href="https://arxiv.org/abs/2403.08185">
-        <image src="PDF_file_icon.png" height="45px">
-        <h4><strong>Paper</strong></h4>
-        <!-- <h6>Paper</h6> -->
-        </a>
+        <!-- ===== LAB LOGO ===== -->
+        <figure class="image is-inline-block lab-logo">
+          <img src="static/pu-icon.svg" alt="Princeton University logo" style="max-width:750px;">
+        </figure>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <figure class="image is-inline-block lab-logo">
+          <img src="static/irom-icon.png" alt="IROM Lab logo" style="max-width:150px;margin-top:-3rem">
+        </figure>
+      </div>
     </div>
-    <div class="col-md-2 text-center">
-        <a href="https://github.com/irom-lab/perception-guarantees">
-        <image src="GitHub_Invertocat_Logo.png" height="45px">
-        <h4><strong>Code</strong></h4>
-        <!-- <h6>Code (coming soon)</h6> -->
-        </a>
-    </div>
-</div>
+  </section>
 
-<div class="row mt-4">
-    <div class="col-md-12 text-center">
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/sztc832hw0c?si=oxn8C7AgpTueKl2M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>    </div>
-</div>
-
-<div class="row justify-content-md-center">
-    <div class="col-md-10 col-lg-8">
-        <h3 class="mt-4 mb-2">
-            Abstract
-        </h3>
-        <p class="text-justify">
-            Rapid advances in perception have enabled large pre-trained models to be used out of the box for processing high-dimensional, noisy, and partial observations of the world into rich geometric representations (e.g., occupancy predictions). However, safe integration of these models onto robots remains challenging due to a lack of reliable performance in unfamiliar environments. In this work, we present a framework for rigorously quantifying the uncertainty of pre-trained perception models for occupancy prediction in order to provide end-to-end statistical safety assurances for navigation. We build on techniques from conformal prediction for producing a calibrated perception system that lightly processes the outputs of a pre-trained model while ensuring generalization to novel environments and robustness to distribution shifts in states when perceptual outputs are used in conjunction with a planner. The calibrated system can be used in combination with any safe planner to provide an end-to-end statistical assurance on safety in a new environment with a user-specified threshold 1-epsilon. We evaluate the resulting approach — which we refer to as Perceive with Confidence (PwC) - with experiments in simulation and on hardware where a quadruped robot navigates through indoor environments containing objects unseen during training or calibration. These experiments validate the safety assurances provided by PwC and demonstrate significant improvements in empirical safety rates compared to baselines.
-        </p>
-        <p style="text-align:center;">
-            <image src="processDiagram.png" width="100%">
-        </p>
+  <!-- ===== OVERVIEW ===== -->
+  <section id="overview" class="section">
+    <div class="container is-max-desktop content-container has-text-centered" style="margin-top:1rem">
+        <iframe width="960" height="540" src="https://www.youtube.com/embed/sztc832hw0c?si=oxn8C7AgpTueKl2M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
     </div>
-</div>
-<div class="row justify-content-md-center">
-    <div class="col-md-10 col-lg-8">
-        <h3>
-            Citation 
-        </h3>
-        <a href="https://arxiv.org/abs/2403.08185">[arxiv version]</a>
-        <div class="form-group col-md-12">
-            <textarea id="bibtex" class="form-control" rows="8" readonly>
+  </section>
+
+
+  <!-- ===== ABSTRACT ===== -->
+  <section id="abstract" class="section">
+    <div class="container is-max-desktop content-container">
+      <h2 class="title is-3 has-text-centered">Abstract</h2>
+      <p>
+        Rapid advances in perception have enabled large pre-trained models to be used out of the box for processing high-dimensional, noisy, and partial observations of the world into rich geometric representations (e.g., occupancy predictions). However, safe integration of these models onto robots remains challenging due to a lack of reliable performance in unfamiliar environments. In this work, we present a framework for rigorously quantifying the uncertainty of pre-trained perception models for occupancy prediction in order to provide end-to-end statistical safety assurances for navigation. We build on techniques from conformal prediction for producing a calibrated perception system that lightly processes the outputs of a pre-trained model while ensuring generalization to novel environments and robustness to distribution shifts in states when perceptual outputs are used in conjunction with a planner. The calibrated system can be used in combination with any safe planner to provide an end-to-end statistical assurance on safety in a new environment with a user-specified threshold 1-epsilon. We evaluate the resulting approach — which we refer to as Perceive with Confidence (PwC) - with experiments in simulation and on hardware where a quadruped robot navigates through indoor environments containing objects unseen during training or calibration. These experiments validate the safety assurances provided by PwC and demonstrate significant improvements in empirical safety rates compared to baselines.
+      </p>
+      <br>
+    <div class="container is-max-desktop">
+        <figure class="image">
+          <img src="static/processDiagram.png" alt="PwC process diagram" style="width: 100%; max-width: 1080px; margin: 0 auto;">
+        </figure>
+    </div>
+    <!--
+    <video id="summary-video" class="shadow" controls preload="metadata" width="100%" poster="static/video.png">
+      <source src="static/video.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+    -->
+    </div>
+  </section>
+
+
+<!-- ===== BIBTEX ===== -->
+<section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <pre><code>
+Journal extension:
+@misc{mei2025perceiveconfidencestatisticalsafety,
+      title={Perceive With Confidence: Statistical Safety Assurances for Navigation with Learning-Based Perception}, 
+      author={Zhiting Mei and Anushri Dixit and Meghan Booker and Emily Zhou and Mariko Storey-Matsutani and Allen Z. Ren and Ola Shorinwa and Anirudha Majumdar},
+      year={2025},
+      eprint={2403.08185},
+      archivePrefix={arXiv},
+      primaryClass={cs.RO},
+      url={https://arxiv.org/abs/2403.08185},}
+
+Conference version:
 @inproceedings{pwc2024,
-title={Perceive with Confidence: Statistical Safety Assurances for Navigation with Learning-Based Perception},
-author={Dixit, Anushri and Mei, Zhiting and Booker, Meghan and Storey-Matsutani, Mariko and Ren, Allen Z. and  Majumdar, Anirudha},
-booktitle={arXiv preprint arXiv:2403.08185},
-year={2023}
-}</textarea>
-        </div>
+               title={Perceive with Confidence: Statistical Safety Assurances for Navigation with Learning-Based Perception},
+               author={Dixit, Anushri and Mei, Zhiting and Booker, Meghan and Storey-Matsutani, Mariko and Ren, Allen Z. and  Majumdar, Anirudha},
+               booktitle={arXiv preprint arXiv:2403.08185},
+               year={2023}}</code></pre>
     </div>
-</div>
+  </section>
+  <br>
+  <center class="is-size-10">
+    The website design was adapted from <a href="https://nerfies.github.io" class="external-link"><span
+        class="dnerf">Nerfies</span></a>.
+  </center>
+  <br>
 
-<div class="row justify-content-md-center">
-    <div class="col-md-10 col-lg-8">
-         <a href="https://robot-help.github.io/">Website adapted from KnowNo.</a>
-    </div>
-</div>
-        
+  <!-- ===== SCRIPTS ===== -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+  <script>
+    $(function(){
+      // Init carousels (only those still using .task-carousel wrappers)
+      $('.task-carousel').slick({
+        slidesToShow:4,
+        slidesToScroll:1,
+        infinite:false,
+        arrows:true,
+        dots:false,
+        lazyLoad:'ondemand',
+        touchMove:true,
+        responsive:[
+          {breakpoint:1024,settings:{slidesToShow:3}},
+          {breakpoint:768, settings:{slidesToShow:2}},
+          {breakpoint:480, settings:{slidesToShow:1}}
+        ]
+      });
+
+      // Horizontal track‑pad scroll → carousel navigation; let vertical scroll bubble up
+      $('.task-carousel').on('wheel',function(e){
+        const deltaX = e.originalEvent.deltaX;
+        const deltaY = e.originalEvent.deltaY;
+        if(Math.abs(deltaX) > Math.abs(deltaY)){
+          e.preventDefault();
+          $(this).slick(deltaX < 0 ? 'slickPrev' : 'slickNext');
+        }
+      });
+    });
+  </script>
 </body>
 </html>
